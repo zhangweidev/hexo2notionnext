@@ -1,3 +1,7 @@
-token_v2="v02%3Auser_token_or_cookies%3ARoF7YRLnZOB0vvU2eLBIzf1TEh_b9sf76ZH7m2Xq0fV-FH9tqiE4LGKag2gXM9YVDR7fo-qZz8HWhxjFzI2KM1IAVk64TbhpZL4MkaZ7zwzHNwLfpANXlxRDHev51mSBtck2"
-database_url = "https://www.notion.so/xxiu/67dac67159b84e1eaaf45e008f4fb437?v=7006917bf5634ce6aad605392f794059&pvs=4"
-hexo_post_path = "/Users/weizhang/Documents/zhangwei/beixiu/source/_posts/**/*.md"
+token_v2: <your_token>
+database_url: <your_notion_database_url>"
+hexo_post_path: <your_hexo_post_path>
+# https://hexo.io/zh-cn/docs/permalinks 
+# 不支持 :id  category 只支持一个 
+sulg_format: ':year-:day-:month-:name'
+

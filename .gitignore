@@ -1,1 +1,4 @@
 dev.yaml
+dist 
+hexo2notionnext.egg-info
+build

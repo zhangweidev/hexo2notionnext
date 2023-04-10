@@ -2,19 +2,19 @@
 
 ## [中文](README.md) [English](README.EN.md)
 
+一个简单的 hexo 导入到 [NotionNext](https://github.com/tangly1024/NotionNext) 或 [nobelium](https://github.com/craigary/nobelium)   database 的库
 
-
-一个简单的 hexo 导入到 [NotionNext](https://github.com/tangly1024/NotionNext) database 的库
-
-
-[nobelium](https://github.com/craigary/nobelium) 的 databse 相比 NotionNext 少了 category 的列, nobelium 也是可以使用的. 
 
 ## 使用
 
 在使用此库之前，您需要完成以下准备工作：
 
-1. NotionNext Database 
-   准备工作参看 https://tangly1024.com/article/vercel-deploy-notion-next 
+1. Notion Database 
+   
+   notionnext:  https://tangly1024.com/article/vercel-deploy-notion-next 
+   
+   nobelium:  https://github.com/craigary/nobelium
+
 
 2. Hexo 博客的 _post 目录
 
@@ -30,25 +30,26 @@ token_v2: <your_token>
 database_url: <your_notion_database_url>
 hexo_post_path: <your_hexo_post_path>
 sulg_format: ':year-:day-:month-:name'
+type: notionnext # or nobelium 
 ```
-
-
-**token_v2**
   
-  notion.so  cookie 中 token_v2 的值
+- **token_v2**
+notion.so  cookie 中 token_v2 的值
 
-**database_url**
-  
-  notionNext 页面的地址,如果没有 [Duplicate](https://tanghh.notion.site/02ab3b8678004aa69e9e415905ef32a5?v=b7eb215720224ca5827bfaa5ef82cf2d) 到自己的 notion 中.
+- **database_url**
+如果没有, duplicate 下面的到你的 notion
+notionNext  Duplicate 这个 [notionNext Notion template](https://tanghh.notion.site/02ab3b8678004aa69e9e415905ef32a5?v=b7eb215720224ca5827bfaa5ef82cf2d) 
 
-**hexo_post_path**
-  
-  本地 Hexo 目录 的 `source/_posts` 目录
+nobelium Duplicate 这个 [ nobeliumNotion template](https://craigary.notion.site/866916e3b939468b9b6f1d47dce99f9c)
 
-**sulg_format**
-  
-  路径的格式参考 https://hexo.io/zh-cn/docs/permalinks ,不支持 :id,  
+- **hexo_post_path**
+本地 Hexo 目录 的 `source/_posts` 目录
 
+- **sulg_format**
+路径的格式参考 https://hexo.io/zh-cn/docs/permalinks ,不支持 :id,  
+
+- **type**
+notionnext  or nobelium 
 
 
 5. 配置完成后,使用以下命令将Hexo文章导入到NotionNext 的 database 中：

@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='hexo2notionnext',
-    version='0.0.6',
+    version='0.0.7',
     description='Convert hexo  to notionnext',
     long_description=open('README.md', 'r').read(),
     long_description_content_type="text/markdown",

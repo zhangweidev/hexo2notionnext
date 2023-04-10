@@ -2,10 +2,7 @@
 
 ## [中文](README.md) [English](README.EN.md)
 
-A simple tool to import Hexo posts into a [NotionNext](https://github.com/tangly1024/NotionNext) database.
-
-The database used in nobelium lacks the "category" column compared to NotionNext, but it can still be used.
-
+A simple tool to import Hexo posts into a [NotionNext](https://github.com/tangly1024/NotionNext)  or [nobelium](https://github.com/craigary/nobelium)  database.
 # Usage
 
 Before using this tool, you need to do the following:
@@ -28,22 +25,27 @@ token_v2: <your_token>
 database_url: <your_notion_database_url>
 hexo_post_path: <your_hexo_post_path>
 sulg_format: ':year-:day-:month-:name'
+type: notionnext # or nobelium 
 ```
-**token_v2**
-
+- **token_v2**
 The value of the token_v2 in the cookie of notion.so.
 
-**database_url**
+- **database_url**
+If not, duplicate it to your own Notion.
 
-The URL of your NotionNext page. If not, duplicate it to your own Notion.
+notionNext  Duplicate this [notionNext Notion template](https://tanghh.notion.site/02ab3b8678004aa69e9e415905ef32a5?v=b7eb215720224ca5827bfaa5ef82cf2d) 
 
-**hexo_post_path**
+nobelium Duplicate this [Notion template](https://craigary.notion.site/866916e3b939468b9b6f1d47dce99f9c)
 
+- **hexo_post_path**
 The source/_posts directory of the local Hexo directory.
 
-**sulg_format**
-
+- **sulg_format**
 The format of the path reference is https://hexo.io/docs/permalinks/, excluding :id.
+
+- **type**
+notionnext  or nobelium 
+
 
 5. After configuring, use the following command to import Hexo posts into the NotionNext database:
 

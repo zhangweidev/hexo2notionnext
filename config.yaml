@@ -4,4 +4,6 @@ hexo_post_path: <your_hexo_post_path>
 # https://hexo.io/zh-cn/docs/permalinks 
 # 不支持 :id  category 只支持一个 
 sulg_format: ':year-:day-:month-:name'
+# notionnext or nobelium
+type: notionnext 
 

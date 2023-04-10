@@ -14,6 +14,9 @@ from  dateutil.parser import parse
 from notion.collection import NotionDate
 import hashlib
 
+
+typ = "notionnext"
+
 def sulg_hash(slug,date):
     sha = hashlib.sha1() 
     sha.update((slug + str(int(date.timestamp()))).encode()) 
@@ -110,6 +113,8 @@ def read_post_file(hexo_post_path,sulg_format):
     return bloglist 
 
 def import_notion(token_v2, database_url,bloglist,):
+    global typ
+
     client = NotionClient( token_v2=token_v2)
     cv = client.get_collection_view(database_url)
     index = 0
@@ -128,9 +133,11 @@ def import_notion(token_v2, database_url,bloglist,):
             row.title=page.get("name") 
             row.summary=content[0:200]+"..."
             row.slug= page.get("sulg") 
-            category =  page.get("category")
-            if category:
-                row.category= category[0]
+
+            if typ != "nobelium" :
+                category =  page.get("category")
+                if category:
+                    row.category= category[0]
             row.tags=page.get("tags")
             row.date=NotionDate( page.get("date"))
 
@@ -154,12 +161,14 @@ def import_notion(token_v2, database_url,bloglist,):
 
 
 def main():
-
+    global typ
     parser = argparse.ArgumentParser(description='Hexo import to NotionNext database .')
     parser.add_argument('-c', type=str,help='config file',default="config.yaml")
     args = parser.parse_args() 
     conf=yaml.safe_load(open(args.c,'r',encoding='utf-8'))
-  
+    
+    typ = conf["type"]  
+
     token_v2 = conf["token_v2"]
     database_url = conf["database_url"]
     hexo_post_path = conf["hexo_post_path"]

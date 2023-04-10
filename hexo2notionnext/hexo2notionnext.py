@@ -46,7 +46,7 @@ def sulg_format_parse(page: dict, s: str):
     category = page.get("category")  
     sulg_dcit["category"] = "/".join(category) if category else ""
     sulg_dcit["name"] = page.get("name","")
-    sulg_dcit["post_tile"]=page.get("post_title","")
+    sulg_dcit["post_title"]=page.get("post_title","")
     sulg_dcit["hash"] = sulg_hash(sulg_dcit["title"],page.get("date")) 
     return _format_parse(sulg_dcit,s)
  
@@ -130,7 +130,7 @@ def import_notion(token_v2, database_url,bloglist,):
             row = cv.collection.add_row()
             row.type = "Post"
             row.status= "Published"
-            row.title=page.get("name") 
+            row.title=page.get("post_title") 
             row.summary=content[0:200]+"..."
             row.slug= page.get("sulg") 
 

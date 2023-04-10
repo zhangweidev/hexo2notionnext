@@ -29,7 +29,7 @@ def _format_parse(data: dict, s: str):
     for key,value in data.items():
         if value:
             result = result.replace(f':{key}', value)
-    return result.replace("//", "/")
+    return result.replace("//", "/").replace(" ", "")  
 
 def sulg_format_parse(page: dict, s: str): 
     sulg_dcit={} 
@@ -42,7 +42,7 @@ def sulg_format_parse(page: dict, s: str):
     sulg_dcit["hour"] = page.get("date").strftime("%H")
     sulg_dcit["minute"] = page.get("date").strftime("%M")
     sulg_dcit["second"] = page.get("date").strftime("%S")
-    sulg_dcit["title"] = page.get("title","").replace(" ", "")  
+    sulg_dcit["title"] = page.get("title","")
     category = page.get("category")  
     sulg_dcit["category"] = "/".join(category) if category else ""
     sulg_dcit["name"] = page.get("name","")
@@ -74,7 +74,7 @@ def read_post_file(hexo_post_path,sulg_format):
                 header = yaml.safe_load(mdChunks[0])
                 content = mdChunks[1]
 
-                post_title = header.get('title',"").replace(" ", "") 
+                post_title = header.get('title',"")
                 date = header.get('date')
             
                 if  isinstance(date, str):

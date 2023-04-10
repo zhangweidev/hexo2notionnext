@@ -7,7 +7,7 @@ A simple tool to import Hexo posts into a [NotionNext](https://github.com/tangly
 
 Before using this tool, you need to do the following:
 
-1. A NotionNext database. Please refer to https://tangly1024.com/article/vercel-deploy-notion-next for preparation instructions.
+1. A NotionNext or nobelium database  
 
 2. The _post directory of your Hexo blog.
 
@@ -16,7 +16,6 @@ Before using this tool, you need to do the following:
 ```
 pip install hexo2notionnext 
 ```
-
 
 4. After installing the tool, create a configuration file named config.yaml with the following configuration:
 
